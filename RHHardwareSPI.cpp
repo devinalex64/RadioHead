@@ -17,6 +17,10 @@ HardwareSPI SPI(1);
 #elif (RH_PLATFORM == RH_PLATFORM_STM32STD) // STM32F4 Discovery
 // Declare an SPI interface to use
 HardwareSPI SPI(1);
+#elif (RH_PLATFORM == RH_PLATFORM_MAX32620FHTR) // MAX32620FTHR
+// Declare an SPI interface to use
+HardwareSPI SPI(1);
+
 #endif
 
 // Arduino Due has default SPI pins on central SPI headers, and not on 10, 11, 12, 13
@@ -53,7 +57,7 @@ void RHHardwareSPI::attachInterrupt()
 }
 
 void RHHardwareSPI::detachInterrupt() 
-{
+{ 
 #if (RH_PLATFORM == RH_PLATFORM_ARDUINO)
     SPI.detachInterrupt();
 #endif

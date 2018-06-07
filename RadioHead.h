@@ -760,6 +760,8 @@
 #define RH_PLATFORM_CHIPKIT_CORE     13
 #define RH_PLATFORM_ESP32            14
 #define RH_PLATFORM_NRF52            15
+#define RH_PLATFORM_MAX32620FTHR     16
+
 
 ////////////////////////////////////////////////////
 // Select platform automatically, if possible
@@ -778,6 +780,8 @@
   #define RH_PLATFORM RH_PLATFORM_ESP8266
  #elif defined(ESP32)
   #define RH_PLATFORM RH_PLATFORM_ESP32
+ #elif defined(ARDUINO_MAXIM)
+  #define RH_PLATFORM RH_PLATFORM_MAX32620FTHR
  #elif defined(ARDUINO)
   #define RH_PLATFORM RH_PLATFORM_ARDUINO
  #elif defined(__MSP430G2452__) || defined(__MSP430G2553__)
@@ -802,7 +806,7 @@
 #if defined(__AVR_ATtiny84__) || defined(__AVR_ATtiny85__) || defined(__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtinyX4__) || defined(__AVR_ATtinyX5__) || defined(__AVR_ATtiny2313__) || defined(__AVR_ATtiny4313__) || defined(__AVR_ATtinyX313__)
  #define RH_PLATFORM_ATTINY
 #endif
-
+ 
 ////////////////////////////////////////////////////
 // Platform specific headers:
 #if (RH_PLATFORM == RH_PLATFORM_ARDUINO)
@@ -857,6 +861,13 @@
  #define memcpy_P memcpy
  #define Serial SerialUSB
  #define RH_HAVE_SERIAL
+
+ #elif (RH_PLATFORM == RH_PLATFORM_MAX32620FTHR)
+ #include <Arduino.h>
+ #include <SPI.h>
+ #define RH_HAVE_HARDWARE_SPI
+ #define RH_HAVE_SERIAL
+
 
 #elif (RH_PLATFORM == RH_PLATFORM_STM32F2) // Particle Photon with firmware-develop
  #include <stm32f2xx.h>

@@ -1,6 +1,8 @@
 # RFM95-LoRa-MAX32620FTHR-Arduino-Examples
 This repo contains examples for working with the RFM95 LoRa module using a MAX32620FTHR board in the Arduino IDE. 
 
+**SPECIFIC EXAMPLE PROGRAMS CAN BE FOUND IN "examples/rf95"**
+
 
 # Getting Started
 This set of programs is meant to help you get started prototyping with a sx1276 enabled radio board, [Adafruit RFM95W LoRa Radio Transceiver Breakout - 900 MHz](https://www.adafruit.com/product/3072) and [Adafruit LoRa Radio FeatherWing - RFM95W 900 MHz](https://www.adafruit.com/product/3231). This list of programs are meant to work with the Arduino IDE and the [MAX32620FTHR](https://www.maximintegrated.com/en/products/microcontrollers/MAX32620FTHR.html) MCU. This specific set of programs will work with the listed Micro Controller Units (MCUs) with the given pin diagrams below, without modifications necessary to the main program.
